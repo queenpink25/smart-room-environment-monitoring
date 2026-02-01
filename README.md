@@ -11,10 +11,10 @@ Smart-Room-Monitoring/
 
 Smart Room Environmental Monitoring and Alert System
 
-Project Description
+Project Description;
 This project is an embedded system designed to monitor environmental conditions in a room. It measures temperature and light intensity and automatically responds to unsafe or uncomfortable conditions. The system is simulated using Tinkercad and implemented with an Arduino Uno.
 
-Problem Statement
+Problem Statement;
 Manual monitoring of room temperature and lighting conditions is inefficient and unreliable. There is a need for an automated system that can monitor environmental conditions and respond appropriately to ensure comfort and safety.
 
 Components Used
