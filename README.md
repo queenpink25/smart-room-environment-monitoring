@@ -7,6 +7,7 @@ Smart-Room-Monitoring/
 │── circuit_screenshot.png
 │── README.md
 
+<img width="1536" height="606" alt="Cool Jaiks" src="https://github.com/user-attachments/assets/9011ae63-c440-4976-aa1d-6087b106b4de" />
 
 
 # Smart Room Monitoring System
