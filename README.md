@@ -41,7 +41,7 @@ Smart-Room-Monitoring/
 - Red LED: + → Pin 7 → 220Ω → GND
 - Blue LED: + → Pin 8 → 220Ω → GND
 
-###HOW TO TEST 
+### HOW TO TEST: 
 Test 1: Normal Room
 What to do: Nothing (just wait)
 What happens:
