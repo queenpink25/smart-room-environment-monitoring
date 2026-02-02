@@ -3,9 +3,9 @@ Embedded system for monitoring temperature and light intensity using Arduino, wi
 
 System Structure
 Smart-Room-Monitoring/
-│── smart_room.ino
 │── circuit_screenshot.png
 │── README.md
+│── smart_room.ino
 
 <img width="1536" height="606" alt="Cool Jaiks" src="https://github.com/user-attachments/assets/9011ae63-c440-4976-aa1d-6087b106b4de" />
 
