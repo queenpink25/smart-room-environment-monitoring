@@ -1,64 +1,45 @@
+/* SMART ROOM SYSTEM */
+/* SHOWS: TEMP: VALUE LIGHT: VALUE */
 
-const int ALERT_LED_PIN = 8;    // Change this to your LED pin
-const int ROOM_LED_PIN = 9;     // Change this to your LED pin
-// ================================================
-
-const int TEMP_PIN = A0;
-const int LIGHT_PIN = A1;
+// PINS
+int tempPin = A0;
+int lightPin = A1;
+int redLED = 7;
+int blueLED = 8;
 
 void setup() {
-  // Set LED pins - USE YOUR ACTUAL PINS HERE
-  pinMode(ALERT_LED_PIN, OUTPUT);
-  pinMode(ROOM_LED_PIN, OUTPUT);
-  
+  pinMode(redLED, OUTPUT);
+  pinMode(blueLED, OUTPUT);
   Serial.begin(9600);
-  Serial.println("System starting...");
-  
-  // Test LEDs
-  Serial.print("Testing LED on pin ");
-  Serial.println(ALERT_LED_PIN);
-  digitalWrite(ALERT_LED_PIN, HIGH);
-  delay(1000);
-  digitalWrite(ALERT_LED_PIN, LOW);
-  
-  Serial.print("Testing LED on pin ");
-  Serial.println(ROOM_LED_PIN);
-  digitalWrite(ROOM_LED_PIN, HIGH);
-  delay(1000);
-  digitalWrite(ROOM_LED_PIN, LOW);
 }
 
 void loop() {
-  // Read temperature
-  int tempRaw = analogRead(TEMP_PIN);
-  float voltage = tempRaw * (5.0 / 1024.0);
-  float tempC = (voltage - 0.5) * 100.0;
+  // READ TEMPERATURE
+  int tempRead = analogRead(tempPin);
+  float temp = tempRead * (500.0 / 1024.0);
   
-  // Read light
-  int lightVal = analogRead(LIGHT_PIN);
+  // READ LIGHT
+  int light = analogRead(lightPin);
   
-  // Control LEDs - USING YOUR PINS
-  if (tempC > 28.0) {
-    digitalWrite(ALERT_LED_PIN, HIGH);
+  // CONTROL RED LED (TEMP > 28)
+  if(temp > 28.0) {
+    digitalWrite(redLED, HIGH);
   } else {
-    digitalWrite(ALERT_LED_PIN, LOW);
+    digitalWrite(redLED, LOW);
   }
   
-  if (lightVal < 500) {
-    digitalWrite(ROOM_LED_PIN, HIGH);
+  // CONTROL BLUE LED (LIGHT > 400)
+  if(light > 400) {
+    digitalWrite(blueLED, HIGH);
   } else {
-    digitalWrite(ROOM_LED_PIN, LOW);
+    digitalWrite(blueLED, LOW);
   }
   
-  // Display
-  Serial.print("Temp: ");
-  Serial.print(tempC);
-  Serial.print("C | Light: ");
-  Serial.print(lightVal);
-  Serial.print(" | LED1: ");
-  Serial.print(digitalRead(ALERT_LED_PIN));
-  Serial.print(" | LED2: ");
-  Serial.println(digitalRead(ROOM_LED_PIN));
+  // DISPLAY VALUES
+  Serial.print("TEMP: ");
+  Serial.print(temp);
+  Serial.print("C  LIGHT: ");
+  Serial.println(light);
   
   delay(2000);
 }
